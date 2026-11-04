@@ -1,0 +1,21 @@
+# Examen Practico - Grupo 2
+
+for ($i = 1; $i -le 3; $i++) {
+
+    # Fecha y hora exacta
+    $fechaHora = Get-Date -Format "dd/MM/yyyy HH:mm:ss"
+    Write-Host "`n--- Verificación $i - $fechaHora ---"
+
+    # Obtener adaptadores de red activos
+    Get-NetAdapter | Where-Object { $_.Status -eq "Up" }
+
+    # Evaluar si la iteración es par o impar
+    if ($i % 2 -eq 0) {
+        Write-Host "Esta es una iteración PAR"
+    }
+    else {
+        Write-Host "Esta es una iteración IMPAR"
+    }
+}
+
+Write-Host "`nEl monitoreo ha concluido con éxito."
